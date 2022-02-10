@@ -4,21 +4,18 @@ resource "vultr_dns_record" "github-A-1" {
   data = "185.199.108.153"
   type = "A"
 }
-
 resource "vultr_dns_record" "github-A-2" {
   domain = vultr_dns_domain.firezone-dev.id
   name = ""
   data = "185.199.109.153"
   type = "A"
 }
-
 resource "vultr_dns_record" "github-A-3" {
   domain = vultr_dns_domain.firezone-dev.id
   name = ""
   data = "185.199.110.153"
   type = "A"
 }
-
 resource "vultr_dns_record" "github-A-4" {
   domain = vultr_dns_domain.firezone-dev.id
   name = ""
