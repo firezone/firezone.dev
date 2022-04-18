@@ -9,3 +9,7 @@ This repository hosts the terraform representation of our firezone.dev domain.
 1. `terraform init`
 1. `terraform refresh`
 1. `terraform show` should now show the correct resources.
+
+## Applying changes to Vultr
+
+`terraform apply`
