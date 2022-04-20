@@ -1,4 +1,5 @@
 resource "vultr_dns_domain" "firezone-dev" {
+  dns_sec = "enabled"
   domain = "firezone.dev"
 }
 
