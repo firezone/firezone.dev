@@ -1,10 +1,3 @@
-resource "vultr_dns_record" "dmarc" {
-  domain = vultr_dns_domain.firezone-dev.id
-  name = "_dmarc"
-  data = "\"v=DMARC1; p=reject; rua=mailto:dmarc-reports@firezone.dev; pct=100; adkim=s; aspf=s\""
-  type = "TXT"
-}
-
 resource "vultr_dns_record" "dmarc-external" {
   domain = vultr_dns_domain.firezone-dev.id
   name = "_dmarc.external"
