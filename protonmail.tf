@@ -25,7 +25,7 @@ resource "vultr_dns_record" "protonmail-mx-2" {
 resource "vultr_dns_record" "protonmail-spf" {
   domain = vultr_dns_domain.firezone-dev.id
   name = ""
-  data = "\"v=spf1 include:_spf.protonmail.ch mx ~all\""
+  data = "\"v=spf1 mx include:sendgrid.net include:_spf.protonmail.ch include:_spf.google.com ~all\""
   type = "TXT"
 }
 
@@ -53,6 +53,6 @@ resource "vultr_dns_record" "protonmail-dkim-3" {
 resource "vultr_dns_record" "protonmail-dmarc" {
   domain = vultr_dns_domain.firezone-dev.id
   name = "_dmarc"
-  data = "\"v=DMARC1; p=none\""
+  data = "\"v=DMARC1; p=quarantine\""
   type = "TXT"
 }

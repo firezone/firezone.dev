@@ -1,10 +1,3 @@
-resource "vultr_dns_record" "dmarc" {
-  domain = vultr_dns_domain.firezone-dev.id
-  name = "_dmarc"
-  data = "\"v=DMARC1; p=reject; rua=mailto:dmarc-reports@firezone.dev; pct=100; adkim=s; aspf=s\""
-  type = "TXT"
-}
-
 resource "vultr_dns_record" "dmarc-external" {
   domain = vultr_dns_domain.firezone-dev.id
   name = "_dmarc.external"
@@ -125,6 +118,13 @@ resource "vultr_dns_record" "google-external-dkim" {
   name = "google._domainkey.external"
   type = "TXT"
   data = "\"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzN8kOwCTLwyzUnpJ4lhppQ4VwfSbxLlOEIkAVj11OvtQJzJLl11XP7Eql4t3qFo5JVh4pv8Z8K2YyEvlK+dbWp6C1RBLGQtc8v0hJzoot+8SVolJzK0CxBnErTc8etCYkNmJAoiu0NMUacEC7ihYh58ILK8WNgOJCSch4G529Rc1wTHV2fD7MVVsNIdU2Ty++eALgq1pyEIaW4j4yahdIOxgvivPhLpOnEBzB9jSMb8oyAyaiUUXSzGA0ELa6sOHGtCNwtWkcSawD4dCPqj1l4J+9/MhgsDNMyoNf6QUTXWKrjxxggF98lHWWfx9zI7x3gzYJ4eK/e3kdgCyANpA9wIDAQAB\""
+}
+
+resource "vultr_dns_record" "google-txt-verification" {
+  domain = vultr_dns_domain.firezone-dev.id
+  name = ""
+  type = "TXT"
+  data = "\"google-site-verification=lxwMofZkY0KE6A18vwu8hpWesTKM6KkyEj5X7z4B96E\""
 }
 
 resource "vultr_dns_record" "google-external-spf" {
