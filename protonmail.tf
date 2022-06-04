@@ -25,7 +25,7 @@ resource "vultr_dns_record" "protonmail-mx-2" {
 resource "vultr_dns_record" "protonmail-spf" {
   domain = vultr_dns_domain.firezone-dev.id
   name = ""
-  data = "\"v=spf1 include:_spf.protonmail.ch include:_spf.google.com mx ~all\""
+  data = "\"v=spf1 mx include:sendgrid.net include:_spf.protonmail.ch include:_spf.google.com ~all\""
   type = "TXT"
 }
 
